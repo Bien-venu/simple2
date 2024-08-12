@@ -1,7 +1,6 @@
-import MainHeader from "./MainHeader";
-import { messages } from "@/data/data";
-import IssuesCard from "./IssuesCard";
-import { HelpCircle, Circle, LucideIcon, LucideProps } from "lucide-react";
+import { useAppContext } from "@/context/AppContext";
+import { Circle, HelpCircle, LucideProps } from "lucide-react";
+import { IoIosCloseCircle } from "react-icons/io";
 import {
   RiProgress1Line,
   RiProgress4Line,
@@ -9,8 +8,8 @@ import {
   RiProgress7Line,
   RiProgress8Line,
 } from "react-icons/ri";
-import { IoIosCloseCircle } from "react-icons/io";
-import { useAppContext } from "@/context/AppContext";
+import IssuesCard from "./IssuesCard";
+import MainHeader from "./MainHeader";
 
 const statuses = [
   {

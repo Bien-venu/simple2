@@ -1,11 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
-import { MdOutlineAttachment } from "react-icons/md";
-import { BsArrowUpShort } from "react-icons/bs";
-import { useState, useRef } from "react";
-import Spinner from "./Spinner";
-import Cookies from "js-cookie";
-import axios, { AxiosError } from "axios";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useAppContext } from "@/context/AppContext";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useRef, useState } from "react";
+import { BsArrowUpShort } from "react-icons/bs";
+import { MdOutlineAttachment } from "react-icons/md";
+import Spinner from "./Spinner";
 
 const Comment = ({ comment, postId }: { comment: any; postId: string }) => {
   const [isUploading, setIsUploading] = useState(false);
@@ -33,7 +33,7 @@ const Comment = ({ comment, postId }: { comment: any; postId: string }) => {
             {
               method: "POST",
               body: formData,
-            }
+            },
           );
           if (response.ok) {
             const data = await response.json();
@@ -74,7 +74,7 @@ const Comment = ({ comment, postId }: { comment: any; postId: string }) => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       if (response.status === 201) {
@@ -88,13 +88,13 @@ const Comment = ({ comment, postId }: { comment: any; postId: string }) => {
         // Handle Axios errors
         console.error(
           "Error creating comment:",
-          error.response?.data || error.message
+          error.response?.data || error.message,
         );
       } else if (error instanceof Error) {
         // Handle general errors
         console.error("Error creating comment:", error.message);
       } else {
-        // Handle unknown errors
+        // Handle any errors
         console.error("Unexpected error:", error);
       }
     }

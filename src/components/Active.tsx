@@ -1,22 +1,14 @@
-import MainHeader from "./MainHeader";
-import IssuesCard from "./IssuesCard";
+import { useAppContext } from "@/context/AppContext";
 import {
-  ArrowUpCircle,
-  CheckCircle2,
   Circle,
   HelpCircle,
-  LucideIcon,
-  LucideProps,
-  XCircle,
+  LucideProps
 } from "lucide-react";
-import { RiProgress1Line } from "react-icons/ri";
-import { RiProgress8Line } from "react-icons/ri";
-import { IoIosCloseCircle } from "react-icons/io";
-import { RiProgress6Line } from "react-icons/ri";
-import { RiProgress7Line } from "react-icons/ri";
-import { RiProgress4Line } from "react-icons/ri";
 import { IconType } from "react-icons";
-import { useAppContext } from "@/context/AppContext";
+import { IoIosCloseCircle } from "react-icons/io";
+import { RiProgress1Line, RiProgress4Line, RiProgress6Line, RiProgress7Line, RiProgress8Line } from "react-icons/ri";
+import IssuesCard from "./IssuesCard";
+import MainHeader from "./MainHeader";
 
 const statuses = [
   {

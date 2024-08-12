@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from "react";
 import { Circle, HelpCircle } from "lucide-react";
 import {
@@ -52,7 +53,7 @@ const Status = ({
   a,
 }: {
   a: {
-    [x: string]: unknown;
+    [x: string]: any;
     status: string;
     _id: string;
   };
@@ -117,7 +118,7 @@ const Status = ({
 
         console.error("AxiosError:", error);
       } else {
-        console.error("Unknown error:", error);
+        console.error("any error:", error);
       }
     }
   };

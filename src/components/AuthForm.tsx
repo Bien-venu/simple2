@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -29,7 +30,7 @@ const AuthForm = ({ data }: any) => {
   }, [data]);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevFormData: any) => ({
@@ -47,7 +48,7 @@ const AuthForm = ({ data }: any) => {
           try {
             await axios.post(
               `https://simple-backend2.vercel.app/api/auth/register`,
-              formData
+              formData,
             );
             toast(item.message.message);
             router("/"); // Navigate to login page after signup
@@ -69,7 +70,7 @@ const AuthForm = ({ data }: any) => {
             `${
               import.meta.env.NEXT_PUBLIC_BACKEND_SERVER_URL
             }/profile/forgot-password`,
-            formData
+            formData,
           );
           toast(item.message.message);
           router("/verify"); // Navigate to verify page after password reset
@@ -77,7 +78,7 @@ const AuthForm = ({ data }: any) => {
           try {
             const response = await axios.post(
               `https://simple-backend2.vercel.app/api/auth/login`,
-              formData
+              formData,
             );
             setUser({ token: response.data.token, loginTime: new Date() });
             Cookies.set("token", response.data.token, { expires: 7 }); // Expires in 7 days
@@ -85,14 +86,14 @@ const AuthForm = ({ data }: any) => {
             Cookies.set("email", response.data.email, { expires: 7 });
             toast(item.message.message);
             router("/issues"); // Navigate to dashboard after login
-          } catch (error: unknown) {
+          } catch (error: any) {
             if (error instanceof AxiosError) {
               console.error(
                 "Login failed:",
-                error.response?.data || error.message
+                error.response?.data || error.message,
               );
               toast(
-                error.response?.data.error || "Login failed. Please try again."
+                error.response?.data.error || "Login failed. Please try again.",
               );
               setIsLoading(false);
             } else {
@@ -200,7 +201,7 @@ const AuthForm = ({ data }: any) => {
               )}
               <button
                 type="submit"
-                className="bg-black flex w-full items-center justify-center bg-white p-3 font-semibold text-background h-12"
+                className="bg-black flex h-12 w-full items-center justify-center bg-white p-3 font-semibold text-background"
               >
                 {isLoading ? (
                   <div className="item">

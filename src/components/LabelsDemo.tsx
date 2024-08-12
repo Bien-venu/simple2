@@ -1,30 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import {
-  RiProgress1Line,
-  RiProgress8Line,
-  RiProgress6Line,
-  RiProgress7Line,
-  RiProgress4Line,
-} from "react-icons/ri";
 import { FaCircle } from "react-icons/fa";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
-  CommandGroup,
   CommandInput,
   CommandItem,
-  CommandList,
+  CommandList
 } from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { ForwardRefExoticComponent, RefAttributes, useState } from "react";
-import { IconType } from "react-icons";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const frameworks = [
   {
@@ -44,10 +36,10 @@ const frameworks = [
   },
 ];
 
-export function LabelsDemo({ value, onChange }) {
+export function LabelsDemo({ value, onChange }:any) {
   const [open, setOpen] = useState(false);
 
-  const handleSelect = (currentValue) => {
+  const handleSelect = (currentValue: any) => {
     onChange(currentValue);
     setOpen(false);
   };

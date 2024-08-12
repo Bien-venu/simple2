@@ -1,36 +1,33 @@
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import {
-  RiProgress1Line,
-  RiProgress8Line,
-  RiProgress6Line,
-  RiProgress7Line,
-  RiProgress4Line,
-} from "react-icons/ri";
-import {
-  ArrowUpCircle,
-  CheckCircle2,
-  Circle,
-  HelpCircle,
-  LucideProps,
-} from "lucide-react";
-import { IoIosCloseCircle } from "react-icons/io";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
-  CommandGroup,
   CommandInput,
   CommandItem,
-  CommandList,
+  CommandList
 } from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
+import {
+  Circle,
+  HelpCircle,
+  LucideProps
+} from "lucide-react";
 import { ForwardRefExoticComponent, RefAttributes, useState } from "react";
 import { IconType } from "react-icons";
+import { IoIosCloseCircle } from "react-icons/io";
+import {
+  RiProgress1Line,
+  RiProgress4Line,
+  RiProgress6Line,
+  RiProgress7Line,
+  RiProgress8Line,
+} from "react-icons/ri";
 
 const frameworks = [
   {

@@ -178,12 +178,16 @@ export function Alert() {
       const token = Cookies.get("token");
 
       // Send the POST request with the token in the headers
-      await axios.post(`http://localhost:3001/api/posts`, formData, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      await axios.post(
+        `https://simple-backend2.vercel.app/api/posts`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
       setChange("create");
       // Handle success
       toast.success("Task created successfully!");

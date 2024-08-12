@@ -1,9 +1,8 @@
-import Cookies from "js-cookie";
 import { useAppContext } from "@/context/AppContext";
+import Cookies from "js-cookie";
 
 const Inbox = () => {
-  const { message, setMessage, data, loading, setLoading } = useAppContext();
-  const username = Cookies.get("username"); // Use Cookies to get the value
+  const { message, setMessage, data, loading } = useAppContext();
   const email = Cookies.get("email"); // Use Cookies to get the value
 
   // Filter data to include only messages where email matches m.user

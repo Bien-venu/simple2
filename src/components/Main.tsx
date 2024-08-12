@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Message from "./Message";
 import Issues from "./Issues";
 import Tasks from "./Tasks";

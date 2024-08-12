@@ -1,31 +1,25 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import {
-  RiProgress1Line,
-  RiProgress8Line,
-  RiProgress6Line,
-  RiProgress7Line,
-  RiProgress4Line,
-} from "react-icons/ri";
-import { RxDotsHorizontal } from "react-icons/rx";
-import { BsFillExclamationSquareFill } from "react-icons/bs";
 import { BiSignal2, BiSignal3, BiSignal4 } from "react-icons/bi";
+import { BsFillExclamationSquareFill } from "react-icons/bs";
+import { RxDotsHorizontal } from "react-icons/rx";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
-  CommandGroup,
   CommandInput,
   CommandItem,
-  CommandList,
+  CommandList
 } from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { ForwardRefExoticComponent, RefAttributes, useState } from "react";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 import { IconType } from "react-icons";
 
 const frameworks = [
@@ -36,13 +30,17 @@ const frameworks = [
   { value: "low", label: "Low", icon: BiSignal2 },
 ];
 
-export function PriorityDemo({ value, onChange }) {
+export function PriorityDemo({ value, onChange }:any) {
   const [open, setOpen] = useState(false);
 
-  const handleSelect = (currentValue) => {
+  const handleSelect = (currentValue: any) => {
     onChange(currentValue);
     setOpen(false);
   };
+
+  function getIconClassName(_icon: IconType) {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

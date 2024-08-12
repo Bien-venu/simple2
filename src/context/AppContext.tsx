@@ -11,7 +11,7 @@ import {
 import Cookies from "js-cookie";
 
 interface AppContextProps {
-  data: unknown[];
+  data: any[];
   change: string;
   setChange: Dispatch<SetStateAction<string>>; // This should be a function
   loading: boolean;
@@ -32,9 +32,9 @@ interface AppContextProps {
 const AppContext = createContext<AppContextProps | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [data, setData] = useState<unknown[]>([]);
+  const [data, setData] = useState<any[]>([]);
   const [user, setUser] = useState<{ token: string; loginTime: Date } | null>(
-    null
+    null,
   );
   const [error, setError] = useState<string | null>(null);
   const [selectedStatus, setSelectedStatus] = useState("To Do");
@@ -59,7 +59,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         setData(data);
       } catch (error) {
         setError(
-          error instanceof Error ? error.message : "An unknown error occurred",
+          error instanceof Error ? error.message : "An any error occurred",
         );
       } finally {
         setChange("data");

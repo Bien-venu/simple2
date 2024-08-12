@@ -1,22 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-import { MdSwapHorizontalCircle } from "react-icons/md";
-import { RiProgress1Line } from "react-icons/ri";
-
-const iconMapping: Record<
-  string,
-  React.ComponentType<React.SVGProps<SVGSVGElement>>
-> = {
-  MdSwapHorizontalCircle,
-  RiProgress1Line,
-  // Add other mappings here
-};
-
-function getIconComponent(
-  iconName: string,
-): React.ComponentType<React.SVGProps<SVGSVGElement>> | null {
-  return iconMapping[iconName] || null;
-}
-
+ 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Function to calculate days ago
 const calculateDaysAgo = (dateString: string) => {
   const date = new Date(dateString);
@@ -27,17 +10,7 @@ const calculateDaysAgo = (dateString: string) => {
 };
 
 const Activities = ({ message }: any) => {
-  const getIconClassName = (iconName: string) => {
-    switch (iconName) {
-      case "MdSwapHorizontalCircle":
-        return "text-grey";
-      case "RiProgress1Line":
-        return "text-inprogress";
-      default:
-        return "";
-    }
-  };
-
+ 
   const userInitials = message?.user?.slice(0, 2) || "N/A";
   return (
     <div className="flex flex-col gap-4">
@@ -54,7 +27,6 @@ const Activities = ({ message }: any) => {
           <>What is wrong</>
         ) : (
           message.comments.map((activity: any, index: number) => {
-            const IconComponent = getIconComponent(activity.icon);
             const daysAgo = calculateDaysAgo(activity.createdAt);
             return (
               <div key={index} className="flex flex-col items-start gap-2">

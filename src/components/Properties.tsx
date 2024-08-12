@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Priority } from "./Priority";
 import { Labels } from "./Labels";
 import { BsCalendar2Event } from "react-icons/bs";
