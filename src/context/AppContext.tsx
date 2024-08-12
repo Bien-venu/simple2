@@ -9,7 +9,6 @@ import {
   SetStateAction,
   useEffect,
 } from "react";
-import Cookies from "js-cookie";
 
 interface AppContextProps {
   data: any[];
