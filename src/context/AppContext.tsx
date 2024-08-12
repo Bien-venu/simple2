@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-refresh/only-export-components */
 import {
   createContext,
@@ -38,9 +39,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
   const [error, setError] = useState<string | null>(null);
   const [selectedStatus, setSelectedStatus] = useState("To Do");
-  const username = Cookies.get("username");
-  const initialFilter = username?.toLowerCase() === "admin" ? "tasks" : "inbox";
-  const [filter, setFilter] = useState(initialFilter);
+  const [filter, setFilter] = useState('tasks');
   const [message, setMessage] = useState<number | null>(null);
   const [change, setChange] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
