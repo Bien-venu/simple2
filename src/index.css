@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Quicksand", sans-serif;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: #343839;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d1d1d1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c1c1c1;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.loader {
+	--color: #080808;
+	--size-mid: 6vmin;
+	--size-dot: 1rem;
+	--size-bar: 0.4vmin;
+	--size-square: 3vmin;
+	
+	display: block;
+	position: relative;
+	width: 50%;
+	display: grid;
+	place-items: center;
+}
+
+.loader::before,
+.loader::after {
+	content: '';
+	box-sizing: border-box;
+	position: absolute;
+}
+
+
+/**
+	loader --2
+**/
+.loader.--2::before,
+.loader.--2::after {
+	width: var(--size-dot);
+	height: var(--size-dot);
+	background-color: var(--color);
+	border-radius: 50%;
+	opacity: 0;
+	animation: loader-2 0.8s cubic-bezier(0.2, 0.32, 0, 0.87) infinite;
+}
+
+.loader.--2::after {
+	animation-delay: 0.3s;
+}
+
+@keyframes loader-2 {
+	0%, 80%, 100% {
+		opacity: 0;
+	}
+	
+	33% {
+		opacity: 1;
+	}
+	
+	0%, 100% {
+		transform: translateX(-4vmin);
+	}
+	
+	90% {
+		transform: translateX(4vmin);
+	}
+}
+
+
+/**
+	miscs
+**/
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 18vmin);
+	grid-template-rows: repeat(3, 18vmin);
+	grid-gap: 1vmin;
+}
+
+.item	{
+	display: grid;
+	place-items: center;
+	border-radius: 4px;
+	transition: opacity 0.4s ease;
+}
