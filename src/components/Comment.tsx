@@ -68,7 +68,7 @@ const Comment = ({ comment, postId }: { comment: any; postId: string }) => {
         {
           message,
           postId,
-          image: images[0], // Only sending the first image if there are multiple
+          image: images, // Only sending the first image if there are multiple
         },
         {
           headers: {

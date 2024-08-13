@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { Key } from "react";
+
 // Function to calculate days ago
 const calculateDaysAgo = (dateString: string) => {
   const date = new Date(dateString);
@@ -42,12 +45,16 @@ const Activities = ({ message }: any) => {
                     </div>
                   </div>
                   {activity.image.length != 0 && (
-                    <div className="flex h-64 w-64">
-                      <img
-                        src={activity.image}
-                        alt={activity.image}
-                        className="h-full w-full object-cover"
-                      />
+                    <div className="flex flex-wrap gap-2">
+                      {activity.image.map((image: string | undefined, index: Key | null | undefined) => (
+                        <div className="flex h-64 w-64" key={index}>
+                          <img
+                            src={image}
+                            alt={image}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
