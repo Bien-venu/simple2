@@ -1,4 +1,3 @@
- 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Function to calculate days ago
 const calculateDaysAgo = (dateString: string) => {
@@ -10,7 +9,6 @@ const calculateDaysAgo = (dateString: string) => {
 };
 
 const Activities = ({ message }: any) => {
- 
   const userInitials = message?.user?.slice(0, 2) || "N/A";
   return (
     <div className="flex flex-col gap-4">
@@ -30,23 +28,24 @@ const Activities = ({ message }: any) => {
             const daysAgo = calculateDaysAgo(activity.createdAt);
             return (
               <div key={index} className="flex flex-col items-start gap-2">
-                <div className="flex flex-col items-start gap-2">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full border border-bgGray bg-bug text-xs uppercase">
-                      {activity.userId.name.slice(0, 2)}
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-grey">
+                <div className="flex w-full flex-col items-start gap-2 rounded border border-border p-3 px-4">
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="flex items-center gap-2 text-xs">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-bgGray bg-bug text-xs uppercase">
+                        {activity.userId.name.slice(0, 2)}
+                      </div>
                       <h1 className="text-white">{activity.userId.name}</h1>
+                      <p className="text-grey">{daysAgo} days ago</p>
+                    </div>
+                    <div className="ml-8 flex items-center gap-2 text-xs text-grey">
                       <p>{activity.message}</p>
-                      <span>.</span>
-                      <p>{daysAgo} days ago</p>
                     </div>
                   </div>
                   {activity.image.length != 0 && (
                     <div className="flex h-64 w-64">
                       <img
                         src={activity.image}
-                        alt=""
+                        alt={activity.image}
                         className="h-full w-full object-cover"
                       />
                     </div>

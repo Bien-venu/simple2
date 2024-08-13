@@ -23,9 +23,9 @@ export function Company() {
       <DropdownMenuTrigger asChild>
         <div className="flex cursor-pointer items-center gap-1 text-xs">
           <h1 className="flex h-6 w-6 items-center justify-center rounded bg-bug uppercase">
-            ic
+            si
           </h1>
-          <h1 className="cursor-pointer text-sm font-medium">Icon</h1>
+          <h1 className="cursor-pointer text-sm font-medium">Simple</h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

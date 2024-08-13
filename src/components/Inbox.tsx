@@ -38,7 +38,6 @@ const Inbox = () => {
                     <div className="flex flex-col text-grey">
                       <div className="flex gap-2 text-sm">
                         <h1 className="font-medium uppercase">{m.project}</h1>
-                        <h2 className="font-semibold">{m.task}</h2>
                       </div>
                       <h6 className="text-xs font-medium">
                         Admin assigned to you

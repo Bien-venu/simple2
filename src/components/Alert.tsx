@@ -259,11 +259,11 @@ export function Alert() {
                     <input
                       id="user"
                       name="user"
-                      type="text"
+                      type="email"
                       onChange={handleChange}
                       value={formData.user}
                       className="border-gray-300 rounded-md border border-border bg-background px-4 py-3 outline-none"
-                      placeholder="Assign To"
+                      placeholder="Enter email"
                       required
                     />
                   </div>

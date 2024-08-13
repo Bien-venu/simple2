@@ -9,6 +9,7 @@ import {
   SetStateAction,
   useEffect,
 } from "react";
+import axios from "axios";
 
 interface AppContextProps {
   data: any[];
@@ -47,17 +48,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await fetch(
-          `https://simple-backend2.vercel.app/api/posts`,
+        const response = await axios.get(
+          `https://simple-backend2.vercel.app/api/posts`
         );
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        setData(data);
+        setData(response.data);
       } catch (error) {
         setError(
-          error instanceof Error ? error.message : "An any error occurred",
+          error instanceof Error ? error.message : "An unexpected error occurred"
         );
       } finally {
         setChange("data");
