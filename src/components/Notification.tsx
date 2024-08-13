@@ -8,9 +8,9 @@ const Notification = ({ a }: any) => {
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl font-semibold">{a.task}</h1>
-          <p className="flex items-center gap-1 text-xs text-grey">
-            Sub-issue of <span className="uppercase">{a.team}</span>
-            <span className="font-semibold text-white"> {a.name}</span>
+          <p className="flex flex-col items-start gap-1 text-xs text-grey">
+            Sub-issue of <span className="uppercase font-light">{a.team}</span>
+            <span className=" font-normal leading-3 tracking-normal text-sm"> {a.about}</span>
           </p>
         </div>
         <div className="flex h-fit w-full border-b border-border pb-8 text-sm font-semibold text-canceled">
