@@ -112,7 +112,9 @@ const Status = ({
       if (axios.isAxiosError(error)) {
         const statusCode = error.response?.status;
 
-        if (statusCode === 400) {
+        if (statusCode === 403) {
+          toast("You are not allowed to update this task");
+        }else{
           toast("You are not allowed to update this task");
         }
 
